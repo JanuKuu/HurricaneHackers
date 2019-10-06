@@ -6,13 +6,18 @@
 
 <img src="https://i.imgur.com/fhfes7E.png" alt="Home Page Image" width=100% height=100%>
 
-<a class="btn btn-dark" href="{% url 'need:index' %}" style='position:absolute; margin-left:300px; margin-top:-128px;'>
-    Need</a
-  >
 
-<a class="btn btn-dark" href="{% url 'donate:index' %}" style='position:absolute; margin-left:450px; margin-top:-128px;'>
-    Supply</a
-  >
+
+<form action="/donate">
+<input type="text" name="textie" style= 'position:absolute; margin-left:350px; margin-top:-500px;'>
+<input type="text" name="textie" style= 'position:absolute; margin-left:350px; margin-top:-455px;'>
+<input type="text" name="textie" style= 'position:absolute; margin-left:350px; margin-top:-410px;'>
+<input type="text" name="textie" style= 'position:absolute; margin-left:350px; margin-top:-365px;'>
+<input type="text" name="textie" style= 'position:absolute; margin-left:350px; margin-top:-320px;'>
+<br><input type="submit" value="Supply" style='position:absolute; margin-left:450px; margin-top:-128px;'>
+<br><input type="submit" value="Need" formaction="/need" style='position:absolute; margin-left:300px; margin-top:-128px;'></form>
+
+
 
 </body>
 </html>
