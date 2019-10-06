@@ -22,5 +22,6 @@ urlpatterns = [
     path('need/', include('hurricanedonate.urls')),
     path('needposts/', include('needposts.urls')),
     path('donate/', include('donate.urls')),
+    path('donateposts/', include('donateposts.urls')),
     path('admin/', admin.site.urls),
 ]
