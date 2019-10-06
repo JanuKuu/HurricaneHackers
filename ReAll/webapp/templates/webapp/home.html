@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+		#map, html, body {margin: 0; height: 100%; overflow: hidden}
+
+		#header {
+			background-color: grey;
+			width: 100%;
+			height: 15%;
+			text-align: center;
+			font-size: 35;
+		}
+
+		#sidebar-left {
+			float: left;
+			width: 25%;
+			height: 85%;
+			background-color: rgb(62, 201, 201);
+		}
+
+		#user-info {
+			font: bold;
+		}
+
+		#input {
+			align-content: center
+		}
+
+		#main {
+			float: left;
+			width: 75%;
+			height: 85%;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<div id="header">
+		<h3>ReAll - Connecting neighbors and resources on on one.</h3>
+	</div>
+
+	<div id="sidebar-left">
+		<form id="user-info">
+			First name:<br>
+			<input type="text" name="firstname" value="">
+			<br>
+			Last name:<br>
+			<input type="text" name="lastname" value="">
+			<br>
+			ZIP Code:<br>
+			<input type="text" name="zipcode" value="">
+			<br>
+			Item Category:<br>
+			<input type="text" name="category" value="">
+			<br>
+			What do you need?<br>
+			<input type="text" name="description" value="">
+			<br>
+			<br>
+			<input type="submit" value="Submit">
+			</form> 
+	</div>
+
+	<div id="main">
+		<div id="map"></div>
+	</div>
+
+	<script>
+		// Initialize and add the map
+		function initMap() {
+			// The location of Uluru
+			var uluru = { lat: -25.344, lng: 131.036 };
+			var candada = { lat: -28.344, lng: 136.036 };
+
+			// The map, centered at Uluru
+			var map = new google.maps.Map(
+				document.getElementById('map'), { zoom: 3, center: uluru });
+			// The marker, positioned at Uluru
+			var marker = [
+				new google.maps.Marker({ position: uluru, map: map }),
+				new google.maps.Marker({ position: candada, map: map }),
+			]
+		}
+
+		function getLocation(){
+			console.log(getAddressInfoByZip(document.forms[0].zipcode.value));
+		}
+	</script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdQ8q5uyKZqjCEmEvPOHN7bSxoUu_hcao&callback=initMap">
+		</script>
+
+	
+	</section>
+
+</body>
+
+</html>
